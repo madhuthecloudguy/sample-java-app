@@ -15,8 +15,13 @@
 # [START cloudbuild_quickstart_build]
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1', '.' ]
-images:
+  args: [ 'build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:${tag}, '.' ]
+  secretEnv: ['tag']
+secrets:
+- kmsKeyName: projects/my-project/locations/global/keyRings/my-keyring/cryptoKeys/my-key
+  secretEnv:
+    tag: "CiQAp1+x8KU5uX4dGiZ5YKepTM8TxVDQY3xHSsVBnTc3z6VqbsgSLQB/hwAIIZleVbbyN/qBZzDQu/d3ziIJ80dYjYHVGqIIPOKqE5In04870vWTWw=="      
+images: 
 - 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1'
 # [END cloudbuild_quickstart_build]
 logsBucket: gs://madhutest/buildlogs
