@@ -22,7 +22,7 @@ steps:
     - -c
     - |
       echo "First Value ${username} and ${tag}"   
-  secretEnv: ['username']
+  secretEnv: ['username', 'tag']
 secrets:
 - kmsKeyName: projects/burner-madbm/locations/us-central1/keyRings/deno/cryptoKeys/test
   secretEnv:
