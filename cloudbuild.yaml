@@ -13,9 +13,16 @@
 # limitations under the License.
 
 steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:${tag}', '.' ]
-  secretEnv: ['tag']
+#- name: 'gcr.io/cloud-builders/docker'
+#args: [ 'build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:${tag}', '.' ]
+#  secretEnv: ['tag']
+- id: "Store Values"
+  name: ubuntu
+  entrypoint: bash
+  args:
+    - -c
+    - |
+      echo "First Value ${tag}"         
 secrets:
 - kmsKeyName: projects/burner-madbm/locations/us-central1/keyRings/deno/cryptoKeys/test
   secretEnv:
