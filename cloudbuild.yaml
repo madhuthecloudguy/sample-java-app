@@ -21,8 +21,8 @@ steps:
   args:
     - -c
     - |
-       echo "${name} is  and ${username}"   
-  secretEnv: ['username', 'name']
+       echo "${tag} is  and ${char}"   
+  secretEnv: ['tag', 'char']
 secrets:
 - kmsKeyName: projects/burner-madbm/locations/us-central1/keyRings/deno/cryptoKeys/test
   secretEnv:
