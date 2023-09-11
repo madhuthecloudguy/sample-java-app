@@ -29,7 +29,7 @@ steps:
  # secretEnv:
  #tag: "CiQAp1+x8KU5uX4dGiZ5YKepTM8TxVDQY3xHSsVBnTc3z6VqbsgSLQB/hwAIIZleVbbyN/qBZzDQu/d3ziIJ80dYjYHVGqIIPOKqE5In04870vWTWw=="      
 availableSecrets:
-- secretManager:
+  secretManager:
     - versionName: projects/813115351433/secrets/username/versions/1
       env: tag
 #images: 
