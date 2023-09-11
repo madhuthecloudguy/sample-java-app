@@ -13,27 +13,27 @@
 # limitations under the License.
 
 steps:
-#- name: 'gcr.io/cloud-builders/docker'
-#args: [ 'build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:${tag}', '.' ]
-#  secretEnv: ['tag']
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:${tag}', '.' ]
+  secretEnv: ['tag']
 - id: "Store Values"
   name: ubuntu
   entrypoint: bash
   args:
     - -c
     - |
-      echo "First Value ${tag}"   
-  secretEnv: ['tag']
-#secrets:
-#- kmsKeyName: projects/burner-madbm/locations/us-central1/keyRings/deno/cryptoKeys/test
- # secretEnv:
- #tag: "CiQAp1+x8KU5uX4dGiZ5YKepTM8TxVDQY3xHSsVBnTc3z6VqbsgSLQB/hwAIIZleVbbyN/qBZzDQu/d3ziIJ80dYjYHVGqIIPOKqE5In04870vWTWw=="      
+      echo "First Value ${username}"   
+  secretEnv: ['username']
+secrets:
+- kmsKeyName: projects/burner-madbm/locations/us-central1/keyRings/deno/cryptoKeys/test
+  secretEnv:
+    tag: "CiQAp1+x8KU5uX4dGiZ5YKepTM8TxVDQY3xHSsVBnTc3z6VqbsgSLQB/hwAIIZleVbbyN/qBZzDQu/d3ziIJ80dYjYHVGqIIPOKqE5In04870vWTWw=="      
 availableSecrets:
   secretManager:
     - versionName: projects/813115351433/secrets/username/versions/1
-      env: tag
-#images: 
-#- 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1'
+      env: username
+images: 
+- 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1'
 # [END cloudbuild_quickstat_build]
 logsBucket: gs://madhutest/buildlogs
 
