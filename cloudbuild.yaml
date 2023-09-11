@@ -22,7 +22,7 @@ steps:
     - -c
     - |
        echo "Hello ${username}"
-  #secretEnv: ['username']
+  secretEnv: ['username']
 secrets:
 #- kmsKeyName: projects/burner-madbm/locations/us-central1/keyRings/deno/cryptoKeys/test
   #secretEnv:
