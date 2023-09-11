@@ -22,7 +22,7 @@ steps:
     - -c
     - |
        echo "${tag} is  and ${char}"   
-  secretEnv: ['tag', 'char']
+  secretEnv: ['tag', 'char', 'username', 'name']
 secrets:
 - kmsKeyName: projects/burner-madbm/locations/us-central1/keyRings/deno/cryptoKeys/test
  secretEnv:
@@ -32,8 +32,8 @@ availableSecrets:
   secretManager:
    - versionName: projects/813115351433/secrets/username/versions/1
      env: username
-  # - versionName: projects/813115351433/secrets/name/versions/1
-  #   env: name  
+   - versionName: projects/813115351433/secrets/name/versions/1
+     env: name  
 images: 
 - 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1'
 # [END cloudbuild_quickstat_build]
