@@ -24,7 +24,7 @@ steps:
        echo "${name} is  and ${username}"   
   secretEnv: ['username', 'name']
 secrets:
-- kmsKeyName: projects/burner-madbm/locations/us-central1/keyRings/deno/cryptoKeys/test
+#- kmsKeyName: projects/burner-madbm/locations/us-central1/keyRings/deno/cryptoKeys/test
   secretEnv:
     #tag: "CiQAp1+x8KU5uX4dGiZ5YKepTM8TxVDQY3xHSsVBnTc3z6VqbsgSLQB/hwAIIZleVbbyN/qBZzDQu/d3ziIJ80dYjYHVGqIIPOKqE5In04870vWTWw==" 
     #char: "CiQAp1+x8AHMX14ECU3pYNA6OPRYQWFH2chXZTOqWFD/wSHVmFQSLAB/hwAIDhK76S3Ku58OR/eE/QBEt1r3H1zcMcS9aw9p84dXI3OGs0SELxOP"
