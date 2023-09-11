@@ -32,7 +32,7 @@ availableSecrets:
   secretManager:
     - versionName: projects/813115351433/secrets/username/versions/1
       env: username
-     - versionName: projects/813115351433/secrets/name/versions/1
+    - versionName: projects/813115351433/secrets/name/versions/1
       env: name
 images: 
 - 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1'
