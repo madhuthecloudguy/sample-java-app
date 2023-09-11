@@ -14,15 +14,14 @@
 
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:${tag}', '.' ]
-  secretEnv: ['tag']
+  args: [ 'build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1', '.' ]
 - id: "Store Values"
   name: ubuntu
   entrypoint: bash
   args:
     - -c
     - |
-      echo "First Value ${username}"   
+      echo "First Value ${username} and ${tag}"   
   secretEnv: ['username']
 secrets:
 - kmsKeyName: projects/burner-madbm/locations/us-central1/keyRings/deno/cryptoKeys/test
