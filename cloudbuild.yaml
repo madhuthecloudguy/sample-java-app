@@ -30,8 +30,8 @@ secrets:
     char: "CiQAp1+x8AHMX14ECU3pYNA6OPRYQWFH2chXZTOqWFD/wSHVmFQSLAB/hwAIDhK76S3Ku58OR/eE/QBEt1r3H1zcMcS9aw9p84dXI3OGs0SELxOP"
 availableSecrets:
   secretManager:
-  # - versionName: projects/813115351433/secrets/username/versions/1
-  #    env: username
+   - versionName: projects/813115351433/secrets/username/versions/1
+     env: username
   # - versionName: projects/813115351433/secrets/name/versions/1
   #   env: name  
 images: 
