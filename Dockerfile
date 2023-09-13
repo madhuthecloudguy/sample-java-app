@@ -14,5 +14,4 @@
 
 # [START cloudbuild_quickstart_build_dockerfile]
 FROM ubuntu
-CMD ["bash"]
 # [END cloudbuild_quickstart_build_dockerfile]
