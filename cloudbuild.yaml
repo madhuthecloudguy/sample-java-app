@@ -13,10 +13,10 @@
 # limitations under the License.
 
 steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1', '.' ]
+#- name: 'gcr.io/cloud-builders/docker'
+# args: [ 'build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1', '.' ]
 - id: "Store Values"
-  name: ubuntu
+  name: us-central1-docker.pkg.dev/burner-madbm/quickstart-docker-repo/quickstart-image:tag1
   entrypoint: bash
   args:
     - -c
@@ -34,8 +34,8 @@ availableSecrets:
      env: username
    #- versionName: projects/813115351433/secrets/name/versions/1
    # env: name  
-images: 
-- 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1'
+#images: 
+#- 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1'
 # [END cloudbuild_quickstat_build]
 logsBucket: gs://madhutest/buildlogs
 
