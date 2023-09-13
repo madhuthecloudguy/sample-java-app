@@ -34,7 +34,7 @@ availableSecrets:
      env: username
    #- versionName: projects/813115351433/secrets/name/versions/1
    # env: name  
-#images: 
+images: 
 - 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/ubuntu:tag1'
 # [END cloudbuild_quickstat_build]
 logsBucket: gs://madhutest/buildlogs
